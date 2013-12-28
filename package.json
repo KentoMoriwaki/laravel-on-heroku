@@ -1,0 +1,17 @@
+{
+  "name": "lara-boot",
+  "version": "0.0.0",
+  "description": "Laravel bootstrap template including laravel4.1, twitter bootstrap, grunt, sass, compass and so on.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "KentoMoriwaki <kirkland1739@gmail.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "grunt": "~0.4.2",
+    "grunt-contrib-concat": "~0.3.0",
+    "grunt-contrib-watch": "~0.5.3",
+    "grunt-contrib-compass": "~0.7.0"
+  }
+}
