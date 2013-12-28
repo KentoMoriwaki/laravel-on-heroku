@@ -8,5 +8,3 @@ Thumbs.db
 /public/bower_components
 .sass-cache
 /client/compiled
-/public/css/compiled.css
-/public/js/compiled.js

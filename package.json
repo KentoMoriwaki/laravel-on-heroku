@@ -9,8 +9,10 @@
     },
     "author": "KentoMoriwaki <kirkland1739@gmail.com>",
     "license": "MIT",
+    "dependencies": {
+        "bower": "1.2.x"
+    },
     "devDependencies": {
-        "bower": "1.2.x",
         "grunt": "~0.4.2",
         "grunt-contrib-concat": "~0.3.0",
         "grunt-contrib-watch": "~0.5.3",
