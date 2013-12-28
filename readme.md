@@ -24,6 +24,17 @@ Enjoy it!
  * grunt-contrib-watch
  * grunt-contrib-compass
 
+## Heroku support
+
+You can deploy your application by few steps.
+
+Recommend buildpack. [CHH/heroku-buildpack-php](https://github.com/CHH/heroku-buildpack-php)
+
+```
+heroku create --buildpack https://github.com/CHH/heroku-buildpack-php
+git push heroku master
+```
+
 
 ## License
 
