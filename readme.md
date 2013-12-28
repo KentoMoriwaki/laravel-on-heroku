@@ -20,9 +20,9 @@ Enjoy it!
 * Twitter bootstrap 3
 * Sass(Compass)
 * Grunt
-** grunt-contrib-cancat
-** grunt-contrib-watch
-** grunt-contrib-compass
+ * grunt-contrib-cancat
+ * grunt-contrib-watch
+ * grunt-contrib-compass
 
 
 ## License
