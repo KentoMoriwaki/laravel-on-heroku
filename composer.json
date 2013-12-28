@@ -1,6 +1,6 @@
 {
-	"name": "laravel/laravel",
-	"description": "The Laravel Framework.",
+	"name": "kentomoriwaki/lara-boot",
+	"description": "Laravel bootstrap template",
 	"keywords": ["framework", "laravel"],
 	"license": "MIT",
 	"require": {
@@ -35,5 +35,14 @@
 	"config": {
 		"preferred-install": "dist"
 	},
-	"minimum-stability": "dev"
+	"minimum-stability": "dev",
+    "extra": {
+        "heroku": {
+            "document-root": "public",
+            "index-document": "index.php",
+            "engines": {
+                "php": "5.5.*"
+            }
+        }
+    }
 }
