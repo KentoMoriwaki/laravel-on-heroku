@@ -1,5 +1,32 @@
 <?php
 
+if (!function_exists('heroku_pgsql_database')) {
+    function heroku_pgsql_database($url = null)
+    {
+        // Get database url from server variables on heroku.
+        if (is_null($url)) {
+            if (!isset($_SERVER['DATABASE_URL'])) {
+                return array();
+            }
+            $url = $_SERVER['DATABASE_URL'];
+        }
+        $match = preg_match(
+            '/^postgres:\/\/(\w+):(\w+)@([\w\-\.]+):(\d+)\/(\w+)$/',
+            $url,
+            $matches);
+        if ($matches === 0) {
+            return array();
+        }
+        return [
+            'username' => $matches[1],
+            'password' => $matches[2],
+            'host' => $matches[3],
+            'post' => $matches[4],
+            'database' => $matches[5],
+        ];
+    }
+}
+
 return array(
 
 	/*
@@ -26,7 +53,7 @@ return array(
 	|
 	*/
 
-	'default' => 'sqlite',
+	'default' => 'pgsql',
 
 	/*
 	|--------------------------------------------------------------------------
@@ -63,16 +90,15 @@ return array(
 			'prefix'    => '',
 		),
 
-		'pgsql' => array(
-			'driver'   => 'pgsql',
-			'host'     => 'localhost',
-			'database' => 'database',
-			'username' => 'root',
-			'password' => '',
-			'charset'  => 'utf8',
-			'prefix'   => '',
-			'schema'   => 'public',
-		),
+        'pgsql' => array_merge(
+            array(
+                'driver' => 'pgsql',
+                'charset' => 'utf8',
+                'prefix' => '',
+                'schema' => 'public',
+            ),
+            heroku_pgsql_database()
+        ),
 
 		'sqlsrv' => array(
 			'driver'   => 'sqlsrv',

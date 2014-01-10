@@ -28,11 +28,11 @@ $app = new Illuminate\Foundation\Application;
 
 $env = $app->detectEnvironment(function(){
 
-    if (php_sapi_name() =='cli') {
+    if (php_sapi_name() == 'cli') {
         return 'local';
     }
 
-    if (isset($_SERVER['SERVER_NAME']) && !str_contains($_SERVER['SERVER_NAME'], 'localhost') ) {
+    if (isset($_SERVER['HTTP_HOST']) && !str_contains($_SERVER['HTTP_HOST'], 'localhost')) {
         return 'production';
     }
 

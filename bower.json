@@ -1,16 +1,20 @@
 {
-    "name": "lara-boot",
-    "version": "0.0.0",
-    "authors": [
-        "KentoMoriwaki <kirkland1739@gmail.com>"
-    ],
-    "description": "Laravel bootstrap template including laravel4.1, twitter bootstrap, grunt, sass, compass and so on.",
-    "license": "MIT",
-    "ignore": [
-        "**/.*",
-        "node_modules",
-        "bower_components",
-        "test",
-        "tests"
-    ]
+  "name": "lara-boot",
+  "version": "0.0.0",
+  "authors": [
+    "KentoMoriwaki <kirkland1739@gmail.com>"
+  ],
+  "description": "Laravel bootstrap template including laravel4.1, twitter bootstrap, grunt, sass, compass and so on.",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "~3.0.3",
+    "font-awesome": "~4.0.3"
+  }
 }

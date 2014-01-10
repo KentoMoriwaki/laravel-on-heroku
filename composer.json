@@ -4,12 +4,12 @@
 	"keywords": ["framework", "laravel"],
 	"license": "MIT",
 	"require": {
-		"laravel/framework": "4.1.*"
+		"laravel/framework": "4.1.*",
+        "barryvdh/laravel-ide-helper": "1.*"
 	},
     "require-dev": {
         "phpunit/phpunit": "3.8.*",
-        "mockery/mockery": "dev-master@dev",
-        "barryvdh/laravel-ide-helper": "1.*"
+        "mockery/mockery": "dev-master@dev"
     },
 	"autoload": {
 		"classmap": [
@@ -42,8 +42,9 @@
             "document-root": "public",
             "index-document": "index.php",
             "engines": {
-                "php": "5.5.*"
-            }
+                "php": "5.5.5"
+            },
+            "nginx-includes": ["nginx.conf"]
         }
     }
 }
