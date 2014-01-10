@@ -1,6 +1,6 @@
-## lara-boot
+## laravel-on-heroku
 
-Laravel bootstrap template
+Laravel4.* bootstrap template for Heroku
 
 ## Install
 
@@ -9,12 +9,28 @@ Clone this repository and
 ```
 composer install
 npm install
-bower install
+php artisan migrate --seed
 ```
 
 Enjoy it!
 
-## Include
+## Settings
+
+To deploy your application to Heroku
+
+```
+heroku create --buildpack https://github.com/CHH/heroku-buildpack-php yourapp
+heroku addons:add  heroko-postgresql
+heroku pg:promote HEROKU_POSTGRESQL_RED_URL
+```
+
+Now you can deploy your application by 1 step!
+
+```
+git push heroku master
+```
+
+## Includes
 
 * Laravel 4.1
 * Twitter bootstrap 3
@@ -24,16 +40,6 @@ Enjoy it!
  * grunt-contrib-watch
  * grunt-contrib-compass
 
-## Heroku support
-
-You can deploy your application by few steps.
-
-Recommend buildpack. [CHH/heroku-buildpack-php](https://github.com/CHH/heroku-buildpack-php)
-
-```
-heroku create --buildpack https://github.com/CHH/heroku-buildpack-php
-git push heroku master
-```
 
 
 ## License
