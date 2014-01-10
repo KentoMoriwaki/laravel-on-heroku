@@ -11,7 +11,37 @@
 |
 */
 
+Route::get('login', function()
+{
+    return View::make('auth.login');
+});
+
+Route::post('login', function()
+{
+    $credentials = Input::only('email', 'password');
+    if (Auth::attempt($credentials)) {
+        return Redirect::intended('/dashboard');
+    }
+    return View::make('auth.login');
+});
+
+Route::get('logout', function()
+{
+    Auth::logout();
+    return Redirect::to('login');
+});
+
 Route::get('/', function()
 {
 	return View::make('hello');
+});
+
+Route::group(['before' => 'auth'], function()
+{
+
+    Route::get('dashboard', function()
+    {
+        return 'Welcome to dashboard!';
+    });
+
 });
