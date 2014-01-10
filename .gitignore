@@ -8,3 +8,4 @@ Thumbs.db
 /public/bower_components
 .sass-cache
 /client/compiled
+/app/database/local.sqlite
