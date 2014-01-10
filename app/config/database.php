@@ -11,10 +11,10 @@ if (!function_exists('heroku_pgsql_database')) {
             $url = $_SERVER['DATABASE_URL'];
         }
         $match = preg_match(
-            '/^postgres:\/\/(\w+):(\w+)@([\w\-\.]+):(\d+)\/(\w+)$/',
+            '/^postgres:\/\/([\w\-_]+):([\w\-_]+)@([\w\-\._]+):(\d+)\/(.+)$/',
             $url,
             $matches);
-        if ($matches === 0) {
+        if ($match === 0) {
             return array();
         }
         return [
