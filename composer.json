@@ -42,8 +42,9 @@
             "document-root": "public",
             "index-document": "index.php",
             "engines": {
-                "php": "5.5.*"
-            }
+                "php": "5.5.5"
+            },
+            "nginx-includes": ["nginx.conf"]
         }
     }
 }
