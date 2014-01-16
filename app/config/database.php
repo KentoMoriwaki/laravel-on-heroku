@@ -3,7 +3,10 @@
 if (!function_exists('heroku_pgsql_database')) {
     function heroku_pgsql_database()
     {
-        $config = $_SERVER['DATABASE_URL'];
+        if (!isset($_SERVER['DATABASE_URL'])) {
+            return array();
+        }
+        $config = parse_url($_SERVER['DATABASE_URL']);
         return [
             'username' => $config['user'],
             'password' => $config['pass'],
