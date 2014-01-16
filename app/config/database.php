@@ -1,28 +1,15 @@
 <?php
 
 if (!function_exists('heroku_pgsql_database')) {
-    function heroku_pgsql_database($url = null)
+    function heroku_pgsql_database()
     {
-        // Get database url from server variables on heroku.
-        if (is_null($url)) {
-            if (!isset($_SERVER['DATABASE_URL'])) {
-                return array();
-            }
-            $url = $_SERVER['DATABASE_URL'];
-        }
-        $match = preg_match(
-            '/^postgres:\/\/([\w\-_]+):([\w\-_]+)@([\w\-\._]+):(\d+)\/(.+)$/',
-            $url,
-            $matches);
-        if ($match === 0) {
-            return array();
-        }
+        $config = $_SERVER['DATABASE_URL'];
         return [
-            'username' => $matches[1],
-            'password' => $matches[2],
-            'host' => $matches[3],
-            'post' => $matches[4],
-            'database' => $matches[5],
+            'username' => $config['user'],
+            'password' => $config['pass'],
+            'host' => $config['host'],
+            'port' => $config['port'],
+            'database' => starts_with($config['path'], '/') ? substr($config['path'], 1) : $config['path'],
         ];
     }
 }
