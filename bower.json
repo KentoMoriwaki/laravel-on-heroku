@@ -1,10 +1,10 @@
 {
-  "name": "lara-boot",
-  "version": "0.0.0",
+  "name": "laravel-on-heroku",
+  "version": "1.0.0",
   "authors": [
     "KentoMoriwaki <kirkland1739@gmail.com>"
   ],
-  "description": "Laravel bootstrap template including laravel4.1, twitter bootstrap, grunt, sass, compass and so on.",
+  "description": "Laravel bootstrap template for heroku",
   "license": "MIT",
   "ignore": [
     "**/.*",
