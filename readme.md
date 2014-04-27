@@ -20,7 +20,7 @@ To deploy your application to Heroku
 
 ```
 heroku create --buildpack https://github.com/CHH/heroku-buildpack-php yourapp
-heroku addons:add  heroko-postgresql
+heroku addons:add  heroku-postgresql
 heroku pg:promote HEROKU_POSTGRESQL_RED_URL
 ```
 
